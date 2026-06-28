@@ -22,7 +22,10 @@
         .notify-section h2 { font-size: 1.5rem; margin-bottom: 12px; }
         .notify-section p { color: var(--text-light); margin-bottom: 20px; }
         .cta-button { display: inline-block; background: var(--primary); color: white; padding: 14px 40px; border-radius: 10px; font-size: 1.1rem; font-weight: 700; text-decoration: none; transition: transform 0.2s; }
-        .cta-button:hover { transform: translateY(-2px); }
+        .cta-button:hover { transform: translateY(-2px); cursor: pointer; }
+        .waitlist-form { display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 420px; margin: 0 auto; }
+        .email-input { width: 100%; padding: 14px 18px; border: 2px solid #ddd; border-radius: 10px; font-size: 1rem; transition: border-color 0.2s; box-sizing: border-box; }
+        .email-input:focus { outline: none; border-color: var(--primary); }
         .trust-bar { padding: 20px 0; text-align: center; }
         .trust-items { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
         .trust-item { color: var(--text-light); font-size: 0.9rem; }
@@ -80,7 +83,21 @@
     <div class="container">
         <h2>📧 Get Notified at Launch</h2>
         <p>Leave your email and be the first to know when NOVAX Cleaner hits Google Play.</p>
-        <a href="https://forms.gle/PLACEHOLDER" class="cta-button" target="_blank">Join the Waitlist</a>
+        <form action="https://formspree.io/f/PLACEHOLDER" method="POST" class="waitlist-form" onsubmit="return handleWaitlist(this);">
+            <input type="email" name="email" placeholder="your@email.com" required class="email-input">
+            <button type="submit" class="cta-button">Join the Waitlist</button>
+            <p class="form-note" style="font-size:0.85em;color:#666;margin-top:8px;">🔒 No spam. One email on launch day. Unsubscribe anytime.</p>
+        </form>
+        <script>
+        function handleWaitlist(form) {
+            var email = form.email.value;
+            var subject = encodeURIComponent("NOVAX Cleaner — Waitlist");
+            var body = encodeURIComponent("Hi NOVAX Team,\n\nPlease notify me when NOVAX Cleaner is available on Google Play.\n\nMy email: " + email + "\n\n— NOVAX Waitlist");
+            window.location.href = "mailto:9199975248v@gmail.com?subject=" + subject + "&body=" + body;
+            form.reset();
+            return false;
+        }
+        </script>
     </div>
 </div>
 
