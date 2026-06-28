@@ -83,19 +83,16 @@
     <div class="container">
         <h2>📧 Get Notified at Launch</h2>
         <p>Leave your email and be the first to know when NOVAX Cleaner hits Google Play.</p>
-        <form action="https://formspree.io/f/PLACEHOLDER" method="POST" class="waitlist-form" onsubmit="return handleWaitlist(this);">
+        <form action="https://formspree.io/f/xnqkwpez" method="POST" class="waitlist-form" target="_blank">
             <input type="email" name="email" placeholder="your@email.com" required class="email-input">
+            <input type="hidden" name="_subject" value="NOVAX Cleaner — New Waitlist Signup!">
+            <input type="hidden" name="_next" value="https://novax-apps.github.io/novax-cleaner/?thanks=1">
             <button type="submit" class="cta-button">Join the Waitlist</button>
             <p class="form-note" style="font-size:0.85em;color:#666;margin-top:8px;">🔒 No spam. One email on launch day. Unsubscribe anytime.</p>
         </form>
         <script>
-        function handleWaitlist(form) {
-            var email = form.email.value;
-            var subject = encodeURIComponent("NOVAX Cleaner — Waitlist");
-            var body = encodeURIComponent("Hi NOVAX Team,\n\nPlease notify me when NOVAX Cleaner is available on Google Play.\n\nMy email: " + email + "\n\n— NOVAX Waitlist");
-            window.location.href = "mailto:9199975248v@gmail.com?subject=" + subject + "&body=" + body;
-            form.reset();
-            return false;
+        if (window.location.search.includes('thanks=1')) {
+            document.querySelector('.waitlist-form').innerHTML = '<p style="color:var(--primary);font-size:1.2em;font-weight:600;">✅ You are on the list! We will email you on launch day.</p>';
         }
         </script>
     </div>
