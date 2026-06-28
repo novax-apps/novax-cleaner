@@ -64,8 +64,7 @@ NOVAX is a mobile app factory building privacy-first utilities. All apps follow 
 1. **Privacy First** — No personal data in public materials, no data collection in apps
 2. **Fair Pricing** — Free trial → one-time purchase, no subscriptions ever
 3. **Multilingual** — 12+ languages from day one
-4. **80/20 Rule** — Focus on top 3 platforms, not all 10
-5. **Feedback Loop** — Publish → Wait 24h → Check AI → Fix → Repeat
+
 
 ## 📄 License
 
